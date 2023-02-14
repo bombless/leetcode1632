@@ -16,7 +16,7 @@ fn main() {
 }
 
 fn from_array<const M: usize, const N: usize>(arr: [[i32; N]; M]) -> Vec<Vec<i32>> {
-    IntoIterator::into_iter(arr).map(Vec::from).collect()
+    <[_; M]>::into_iter(arr).map(Vec::from).collect()
 }
 
 fn get_data() -> Vec<Vec<i32>> {
