@@ -1,6 +1,8 @@
 mod solution;
+mod gui;
 
-fn main() {
+#[macroquad::main("Matrix")]
+async fn main() {
     let matrix = solution::Solution::matrix_rank_transform(get_data());
     let m = matrix.len();
     let n = matrix[0].len();
@@ -12,6 +14,8 @@ fn main() {
         }
         println!();
     }
+
+    gui::run(&matrix).await;
 
 }
 
